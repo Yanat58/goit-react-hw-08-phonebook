@@ -1,0 +1,53 @@
+.nav__box {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo__img {
+  filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.2));
+}
+
+.nav__list {
+  display: flex;
+  margin-top: 19px;
+  margin-left: 40px;
+  gap: 35px;
+}
+
+.navLink {
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: -0.05em;
+
+  color: var(--text-title);
+  text-transform: uppercase;
+}
+
+.active {
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: -0.05em;
+
+  color: var(--text-activ);
+  text-transform: uppercase;
+}
+
+.titleAplication,
+.titleColor {
+  text-transform: uppercase;
+  font-size: 48px;
+  line-height: 0.9;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.titleAplication {
+  margin-left: 20px;
+
+  color: #2525eb;
+}
+
+.titleColor {
+  color: #ff5314;
+}

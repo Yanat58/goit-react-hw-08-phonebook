@@ -1,0 +1,9 @@
+.container {
+  display: block;
+  width: 1200px;
+  margin: 0 auto;
+  /* padding: 10px 30px;
+    background: linear-gradient(to bottom right, #dce0f8, #f7d8c4);
+    border-radius: 18px;
+    box-shadow: 0px 14px 72px 0 rgba(201, 198, 198, 0.6); */
+}
