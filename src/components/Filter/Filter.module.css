@@ -1,7 +1,8 @@
 .filterLabel {
   display: flex;
+  font-weight: 500;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   text-align: left;
   font-size: 16px;
   line-height: 1.16;
@@ -9,37 +10,34 @@
 
 .filterInput {
   width: 400px;
-  /* margin-left: 15px; */
   padding-top: 10px;
   padding-left: 22px;
   padding-bottom: 10px;
 
   background: inherit;
-  border: 2px solid rgba(255, 83, 20, 0.6);
+  border: 2px solid var(--border-input-color);
   border-radius: 18px;
-  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15);
-  text-align: left;
-  color: rgba(109, 108, 108, 0.8);
+  box-shadow: var(--shadow);
 }
 
 .filterInput:hover,
 .filterInput:focus {
   outline: none;
-  border-color: #ff5314;
-  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow);
 }
 
 .filterText {
   display: block;
   margin-bottom: 10px;
   margin-left: 8px;
-  color: #161675;
+  color: var(--text-color);
 }
 .titleSection {
-  margin-left: 20px;
+  margin-left: 8px;
   margin-bottom: 20px;
 
   font-size: 32px;
   line-height: 0.9;
-  color: #161675;
+  color: var(--text-color);
 }

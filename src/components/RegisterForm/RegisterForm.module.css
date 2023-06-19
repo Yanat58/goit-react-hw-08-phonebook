@@ -1,25 +1,41 @@
-.formBox {
+.register__form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 600px;
+  margin: 20px auto;
 }
 
-.label {
-  display: flex;
-  font-weight: 500;
-  flex-direction: column;
+.register__text {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+}
+
+.register__label {
   margin-bottom: 15px;
+  color: var(--title-text-color);
+}
+
+.register__label:focus,
+.register__label:hover {
+  color: var(--accent-color);
+}
+
+.register__span {
+  display: block;
+  margin-bottom: 6px;
   text-align: left;
   font-size: 16px;
   line-height: 1.16;
-}
-.labelText {
-  display: block;
-  margin-bottom: 9px;
-  margin-left: 8px;
   color: var(--text-color);
 }
-.input {
-  width: 400px;
+
+.register__input {
+  width: 500px;
   padding-top: 11px;
   padding-left: 22px;
   padding-bottom: 11px;
@@ -27,19 +43,17 @@
   background-color: inherit;
   border: 2px solid var(--border-input-color);
   border-radius: 18px;
-  box-shadow: var(--shadow);
-  /* text-align: left;
-  color: rgba(109, 108, 108, 0.8); */
+
+  transition: border 250ms var(--animation-function);
 }
 
-.input:hover,
-.input:focus {
+.register__input:focus,
+.register__input:hover {
   outline: none;
-  border-color: var(--border-input-color);
-  box-shadow: var(--shadow);
+  border-color: var(--accent-color);
 }
 
-.btnAdd {
+.register__btn {
   display: flex;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -58,29 +72,12 @@
   background-color: var(--accent-color);
   box-shadow: var(--shadow);
 
+  cursor: pointer;
   transition: background-color 250ms var(--animation-function),
     color 250ms var(--animation-function) 150ms;
 }
-
-.btnAddIcon {
-  margin-right: 8px;
-}
-
-.btnAddText {
-  text-align: center;
-}
-
-.btnAdd:hover,
-.btnAdd:focus {
+.register__btn:hover,
+.register__btn:focus {
   background-color: inherit;
   color: var(--accent-color);
-}
-
-.form__title {
-  margin-left: 8px;
-  margin-bottom: 20px;
-
-  font-size: 32px;
-  line-height: 0.9;
-  color: var(--text-color);
 }

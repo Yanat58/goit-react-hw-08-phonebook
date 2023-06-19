@@ -12,9 +12,8 @@ export const Filter = () => {
 
   return (
     <>
-      <h2 className={css.titleSection}>Contacts</h2>
       <label className={css.filterLabel}>
-        <b className={css.filterText}>Find contacts by name</b>
+        <p className={css.filterText}>Find contacts by name</p>
 
         <input
           className={css.filterInput}

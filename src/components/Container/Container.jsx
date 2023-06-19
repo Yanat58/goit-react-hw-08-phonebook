@@ -1,5 +1,6 @@
-import css from './Container.module.css'
+import React from 'react';
+import css from './Container.module.css';
 
-export const Container= ({ children }) => {
-    return <main className={css.container}>{children}</main>;
-  };
+export const Container = ({ children }) => {
+  return <div className={css.container}>{children}</div>;
+};

@@ -1,1 +1,18 @@
+.message__text {
+  margin-bottom: 20px;
+  margin-left: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  font-style: italic;
 
+  color: var(--text-color);
+}
+
+.titleSection {
+  margin-left: 8px;
+  margin-bottom: 20px;
+
+  font-size: 32px;
+  line-height: 0.9;
+  color: var(--text-color);
+}

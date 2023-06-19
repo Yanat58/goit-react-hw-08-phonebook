@@ -1,80 +1,66 @@
-import React, { useEffect, useState } from 'react';
-import { Container } from 'components/Container/Container';
-import { ContactForm } from './ContactForm/ContactForm';
-// import { ContactList } from 'components/ContactList/ContactList';
-// import { Filter } from 'components/Filter/Filter';
-import { Modal } from 'components/Modal/Modal';
-// import { Layout } from './Layout/Layout';
-import { AppBar } from './AppBar/AppBar';
-import { useDispatch } from 'react-redux';
-// import { Message } from './Message/Message';
-// import {
-//   selectContactValue,
-//   selectError,
-//   selectIsLoading,
-// } from 'redux/contacts/selectors';
-
+import { useEffect, lazy } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import { HomePage } from 'page/HomePage';
-import { RegisterPage } from 'page/RegisterPage';
-import { LoginPage } from 'page/LoginPage';
-import { ContactsPage } from 'page/ContactsPage';
-import { Layout } from './Layout/Layout';
+import { Container } from 'components/Container/Container';
+import { Layout } from './Layout';
 import { refreshUser } from 'redux/auth/operations';
+import { selectIsRefreshing } from 'redux/auth/selectors';
+import { Footer } from './Footer/Footer';
+import { PrivatreRoute } from './PrivatreRoute';
+import { PublicRoute } from './PublicRoute';
+
+const HomePage = lazy(() => import('../pages/HomePage'));
+const ContactsPage = lazy(() => import('../pages/ContactsPage'));
+const LoginPage = lazy(() => import('../pages/LoginPage'));
+const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 
 export const App = () => {
-  // const [showModal, setShowModal] = useState(false);
-  // const isLoading = useSelector(selectIsLoading);
-  // const error = useSelector(selectError);
-
-  // const items = useSelector(selectContactValue);
   const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  // const toggleModal = () => {
-  //   setShowModal(!showModal);
-  // };
-
   return (
-    <>
-      {/* <AppBar onClose={toggleModal} />
-      {showModal && (
-        <Modal onClose={toggleModal}>
-          <ContactForm onClose={toggleModal} />
-        </Modal>
-      )} */}
-      {/* <Container> */}
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/contacts" element={<ContactsPage />} />
-        </Route>
-      </Routes>
-      {/* </Container> */}
-    </>
+    <Container>
+      {isRefreshing ? (
+        <b>Refreshing user...</b>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
 
-    // <>
-    //   <Layout>
-    //     <AppBar onClose={toggleModal} />
-    //     {showModal && (
-    //       <Modal onClose={toggleModal}>
-    //         <ContactForm onClose={toggleModal} />
-    //       </Modal>
-    //     )}
-    //     {items.length===0 ?<Message/> :
-    //    ( <>
-    //      <Filter />
-    //      {isLoading && !error && <b>Request in progress...</b> }
-    //     <ContactList />
-    //     </>)
-    //     }
+            <Route
+              path="/register"
+              element={
+                <PublicRoute
+                  redirectTo="/contacts"
+                  component={<RegisterPage />}
+                />
+              }
+            />
 
-    //   </Layout>
-    // </>
+            <Route
+              path="/login"
+              element={
+                <PublicRoute redirectTo="/contacts" component={<LoginPage />} />
+              }
+            />
+
+            <Route
+              path="/contacts"
+              element={
+                <PrivatreRoute
+                  redirectTo="/login/"
+                  component={<ContactsPage />}
+                />
+              }
+            />
+          </Route>
+        </Routes>
+      )}
+      <Footer />
+    </Container>
   );
 };

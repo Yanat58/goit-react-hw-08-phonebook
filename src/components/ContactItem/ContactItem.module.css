@@ -1,39 +1,41 @@
 .contactName {
+  font-weight: 500;
   font-size: 18px;
-  color: #161675;
+  color: var(--text-color);
 }
 
 .contactNumber {
+  font-weight: 500;
   margin-left: auto;
   margin-right: 20px;
-  color: #161675;
+  color: var(--text-color);
 }
 
 .contactImg {
   margin-right: 10px;
   width: 50px;
   height: 50px;
-  border: 1px solid#161675;
+  border: 1px solid var(--border-color);
   border-radius: 50%;
-  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow);
 }
 
 .deletBtn {
-  border: 2px solid #ff5314;
+  border: 2px solid var(--accent-color);
   border-radius: 18px;
 
-  color: #ff5314;
+  color: var(--accent-color);
   background-color: inherit;
-  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 150ms;
+  transition: background-color 250ms var(--animation-function),
+    color 250ms var(--animation-function) 150ms;
 }
 
 .deletBtn:hover,
 .deletBtn:focus {
-  background-color: #ff5314;
-  color: #fff;
+  background-color: var(--accent-color);
+  color: var(--bg-white);
 }
 
 .btnDeleteIcon {

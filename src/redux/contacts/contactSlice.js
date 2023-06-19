@@ -7,7 +7,7 @@ import { deleteContact } from './operations';
 const contactSlice = createSlice({
   name: 'contacts',
   initialState: {
-    items: [],
+    contacts: [],
     isLoading: false,
     error: null,
   },
@@ -17,7 +17,7 @@ const contactSlice = createSlice({
     },
     [fetchContacts.fulfilled]: (state, action) => {
       state.isLoading = false;
-      state.items = action.payload;
+      state.contacts = action.payload;
       state.error = null;
     },
     [fetchContacts.rejected]: (state, action) => {
@@ -32,7 +32,7 @@ const contactSlice = createSlice({
     [addContact.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.error = null;
-      state.items.push(action.payload);
+      state.contacts.push(action.payload);
     },
     [addContact.rejected]: (state, action) => {
       state.isLoading = false;
@@ -46,17 +46,19 @@ const contactSlice = createSlice({
     [deleteContact.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.error = null;
-      state.items = state.items.filter(item => item.id !== action.payload.id);
+      state.contacts = state.contacts.filter(
+        contact => contact.id !== action.payload.id
+      );
     },
     [deleteContact.rejected]: (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
     },
-    [logOut.fulfilled]: (state)=> {
-      state.items = [];
+    [logOut.fulfilled]: state => {
+      state.contacts = [];
       state.error = null;
       state.isLoading = false;
-    }
+    },
   },
 });
 

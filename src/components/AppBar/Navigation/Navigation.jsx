@@ -8,7 +8,7 @@ import css from './Navigation.module.css';
 export const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const activeClass = ({ isActive }) =>
-    isActive ? `${css.active}` : `${css.navLink}`;
+    isActive ? `${css.active}` : `${css.nav__link}`;
 
   return (
     <div className={css.nav__box}>
@@ -19,14 +19,13 @@ export const Navigation = () => {
         width={95}
         height={95}
       />
-      <h1 className={css.titleAplication}>
-        Phone<span className={css.titleColor}>book</span>
-      </h1>
 
       <ul className={css.nav__list}>
         <li>
           <NavLink className={activeClass} to="/">
-            Home
+            <h1 className={css.titleAplication}>
+              Phone<span className={css.titleColor}>book</span>
+            </h1>
           </NavLink>
         </li>
         <li>
@@ -37,8 +36,6 @@ export const Navigation = () => {
           )}
         </li>
       </ul>
-      {/* <NavLink to="/">Home</NavLink>
-      {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>} */}
     </div>
   );
 };

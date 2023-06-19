@@ -12,11 +12,20 @@
   gap: 35px;
 }
 
-.navLink {
+.nav__link {
   font-weight: 500;
-  font-size: 23px;
-  letter-spacing: -0.05em;
+  font-size: 24px;
+  letter-spacing: -0.06em;
 
-  color: var(--text-title);
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+
+.active {
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: -0.06em;
+
+  color: var(--text-link-current);
   text-transform: uppercase;
 }

@@ -1,9 +1,11 @@
 import React from 'react';
+import css from './Message.module.css';
 
 export const Message = () => {
   return (
-    <div>
-      <p>There are no any contacts ... </p>
-    </div>
+    <>
+      <h2 className={css.titleSection}>Contact list</h2>
+      <p className={css.message__text}>There are no any contacts ... </p>
+    </>
   );
 };
