@@ -8,11 +8,30 @@
 
 .login__text {
   margin-bottom: 12px;
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: 500;
+  font-size: 18px;
   line-height: 1.15;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
+}
+
+.login__link {
+  margin-bottom: 12px;
+  font-weight: 500;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  color: var(--text-link-current);
+}
+
+.login__nav:hover,
+.login__nav:focus {
+  text-decoration: underline;
+}
+
+.login__nav {
+  color: var(--text-link-current);
 }
 
 .login__label {
@@ -84,17 +103,17 @@
 
 .title__section {
   text-align: center;
-    margin-bottom: 20px;
-  
-    font-size: 32px;
-    line-height: 0.9;
-    color: var(--text-color);
-  }
-  
-  .login__text {
-    display: block;
-    text-align: center;
-    margin-bottom: 10px;
-    margin-left: 8px;
-    color: var(--text-color);
-  }
+  margin-bottom: 20px;
+
+  font-size: 32px;
+  line-height: 0.9;
+  color: var(--text-color);
+}
+
+.login__text {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 8px;
+  color: var(--text-color);
+}

@@ -1,17 +1,18 @@
 import React from 'react';
-import hometImg from 'components/image/homeImg.png';
+import phone from 'image/phone.png';
 
 const HomePage = () => {
   return (
-    <div>
+    <>
       <img
-        style={{ display: 'flex', marginLeft: 'auto', marginRight: '40px' }}
-        src={hometImg}
-        alt="logo"
-        width={550}
-        // height={750}
+        style={{
+          backgroundSize: 'cover',
+        }}
+        src={phone}
+        alt="phone"
+        width={1200}
       />
-    </div>
+    </>
   );
 };
 export default HomePage;

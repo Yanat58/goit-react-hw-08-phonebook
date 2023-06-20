@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
-import logo from './logo.png';
+import logo from 'image/logo.png';
 import css from './Navigation.module.css';
 
 export const Navigation = () => {

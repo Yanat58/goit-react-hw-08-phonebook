@@ -2,12 +2,11 @@
   display: block;
   margin-bottom: 20px;
   width: 400px;
-  padding: 15px;
+  padding-left: 8px;
+  padding-right: 15px;
 }
 
 .contactItem {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 8px 0;
 }

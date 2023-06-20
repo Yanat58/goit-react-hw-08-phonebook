@@ -3,14 +3,22 @@ import Notiflix from 'notiflix';
 import { BiUserMinus } from 'react-icons/bi';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
-// import person from './person.png';
+import person from 'image/person.png';
+
 import css from './ContactItem.module.css';
 
 export const ContactItem = ({ contact }) => {
   const dispatch = useDispatch();
-  console.log(contact);
+
   return (
     <>
+      <img
+        style={{ marginRight: '5px' }}
+        src={person}
+        alt="person"
+        width={45}
+        height={45}
+      />
       <p className={css.contactName}>{contact.name}</p>
       <p className={css.contactNumber}>{contact.number}</p>
       <button

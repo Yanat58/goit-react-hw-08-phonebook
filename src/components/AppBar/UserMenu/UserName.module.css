@@ -1,8 +1,8 @@
 .menu__box {
-  padding: 37px 0 20px;
+  padding-top: 25px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
 }
 
 .menu__text {

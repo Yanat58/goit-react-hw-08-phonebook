@@ -47,8 +47,8 @@ export const ContactForm = () => {
 
   return (
     <>
-      <h1 className={css.form__title}>Add new contact</h1>
       <form className={css.formBox} onSubmit={handlerSubmit}>
+        <h1 className={css.form__title}>Add new contact</h1>
         <label className={css.label} htmlFor="idName">
           <p className={css.labelText}>Name</p>
           <input

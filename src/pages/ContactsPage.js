@@ -6,7 +6,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
 import { selectContactValue } from 'redux/contacts/selectors';
-import homeImg from 'components/image/homeImg.png';
+import phone1 from 'image/phone1.png';
 
 const ContactsPage = () => {
   const contacts = useSelector(selectContactValue);
@@ -17,7 +17,7 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
       <div>
         <ContactForm />
 
@@ -26,11 +26,12 @@ const ContactsPage = () => {
       </div>
 
       <img
-        style={{ display: 'flex', marginLeft: 'auto', marginRight: '40px' }}
-        src={homeImg}
-        alt="logo"
-        width={550}
-        // height={750}
+        style={{
+          backgroundSize: 'cover',
+        }}
+        src={phone1}
+        alt="phone"
+        width={500}
       />
     </div>
   );
