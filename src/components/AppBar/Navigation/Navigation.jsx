@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
-import logo1 from './logo1.png';
+import logo from './logo.png';
 import css from './Navigation.module.css';
 
 export const Navigation = () => {
@@ -14,7 +14,7 @@ export const Navigation = () => {
     <div className={css.nav__box}>
       <img
         className={css.logo__img}
-        src={logo1}
+        src={logo}
         alt="logo"
         width={95}
         height={95}

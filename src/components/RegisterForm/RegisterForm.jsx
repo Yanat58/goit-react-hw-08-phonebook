@@ -1,43 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 import css from './RegisterForm.module.css';
 
 export const RegisterForm = () => {
-  // const [name, setName] = React.useState('');
-  // const [email, setEmail] = React.useState('');
-  // const [password, setPassword] = React.useState('');
-
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
 
   const dispatch = useDispatch();
 
-  const handleChange = ({ target: { name, value } }) => {
-    switch (name) {
-      case 'name':
-        return setName(value);
-
-      case 'email':
-        return setEmail(value);
-
-      case 'password':
-        return setPassword(value);
-
-      default:
-        return;
-    }
-  };
-
   const handleSubmit = e => {
     e.preventDefault();
-
-    // const user = {
-    //   name,
-    //   email,
-    //   password,
-    // };
 
     dispatch(
       register({
@@ -52,14 +26,14 @@ export const RegisterForm = () => {
     setPassword('');
   };
   return (
+    <>
+    <h2 className={css.title__section} >Create your account</h2>
     <form
       className={css.register__form}
       onSubmit={handleSubmit}
       autoComplete="off"
     >
-      <b className={css.register__text}>
-        Залиште свої дані, ми вам передзвонимо
-      </b>
+      
       <label className={css.register__label}>
         <span className={css.register__span}>Username</span>
         <input
@@ -68,7 +42,7 @@ export const RegisterForm = () => {
           name="name"
           value={name}
           placeholder="Enter name"
-          onChange={handleChange}
+          onChange={(e)=>{setName(e.target.value)}}
         />
       </label>
 
@@ -80,7 +54,7 @@ export const RegisterForm = () => {
           name="email"
           value={email}
           placeholder="Enter email"
-          onChange={handleChange}
+          onChange={(e)=>{setEmail(e.target.value)}}
         />
       </label>
 
@@ -92,13 +66,14 @@ export const RegisterForm = () => {
           name="password"
           value={password}
           placeholder="Enter password"
-          onChange={handleChange}
+          onChange={(e)=>{setPassword(e.target.value)}}
         />
       </label>
 
       <button className={css.register__btn} type="submit">
-        <span>Sign in</span>
+        <span>Sign up</span>
       </button>
     </form>
+    </>
   );
 };

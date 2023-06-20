@@ -10,7 +10,7 @@ export const AuthNav = () => {
     <ul className={css.nav__list}>
       <li>
         <NavLink className={activeClass} to="/register">
-          Sign in
+          Sign up
         </NavLink>
       </li>
       <li>
